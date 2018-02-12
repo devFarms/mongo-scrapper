@@ -16,27 +16,11 @@
             <div class="nav-wrapper blue-grey darken-1">
               <a href="#!" class="brand-logo center">Mongo Scaper Homework Assignment</a>
               <ul class="left hide-on-med-and-down">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="saved.html">Saved Articles</a></li>
-                <li>
-                    <a class="red darken-4 btn-large modal-trigger" href="#modal1">Scrape Website</a>
-                </li>
-
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="saved.html">Saved Articles</a></li>
               </ul>
             </div>
           </nav>
-        
-          <!-- Modal Structure -->
-          <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <h4>Modal Header</h4>
-                    <p>A bunch of text</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                </div>
-            </div>
-       
         
         <div class="row" style="background-image: url('images/newspaper.jpg'); background-size: length; color: white; padding: 100px;">
             <div class="col s12 m8">
@@ -56,8 +40,8 @@
                         I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">Read Article</a>
-                        <a href="#">Save Article</a>
+                        <a class="modal-trigger" href="#modal1">Add Note</a>
+                        <a href="#">Remove Article</a>
                     </div>
                     </div>
                 </div>
@@ -69,11 +53,21 @@
                         I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">Read Article</a>
-                        <a href="#">Save Article</a>
+                        <a class="modal-trigger" href="#modal1">Add Note</a>
+                        <a href="#">Remove Article</a>
                     </div>
                     </div>
                 </div>
+                <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Add Note</h4>
+                    <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </div>
             </div>
         </div>
         <footer class="page-footer blue-grey darken-1">
