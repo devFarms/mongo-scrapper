@@ -16,11 +16,15 @@ db.on('error', function(error) {
     console.log('Database error:', error);
 });
 
+// Set up a static folder (public) for our web app
+app.use(express.static("public"));
+
+// Create the routes
 app.get('/', function(req, res) {
     res.send('Hello world');
 });
 
-app.get('/all', function(req, res) {
+app.get('/saved', function(req, res) {
     db.scrapedData.find({}, function (err, found) {
         if (err) {
             console.log(err);
@@ -60,9 +64,6 @@ app.get('/scrape', function(req, res) {
 
     res.send('Scrape complete');
 });
-
-// Set up a static folder (public) for our web app
-// app.use(express.static("public"));
 
 // Set the app to listen on port 3000
 app.set("port", (process.env.PORT || 3000));
