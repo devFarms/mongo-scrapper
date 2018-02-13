@@ -9,9 +9,19 @@ var cheerio = require('cheerio');
 var app = express();
 
 // Database configuration
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI, {
+  useMongoClient: true
+});
 // var databaseUrl = 'mongoHeadlines';
 var databaseUrl = MONGODB_URI;
 var collection = ['scrapedData'];
+
+
 
 var db = mongojs(databaseUrl, collection);
 db.on('error', function(error) {
@@ -74,11 +84,3 @@ app.listen(app.get("port"), function(){
     console.log("Server started on port " +app.get("port"))
 });
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-
-// Set mongoose to leverage built in JavaScript ES6 Promises
-// Connect to the Mongo DB
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, {
-  useMongoClient: true
-});
