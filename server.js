@@ -9,7 +9,8 @@ var cheerio = require('cheerio');
 var app = express();
 
 // Database configuration
-var databaseUrl = 'mongoHeadlines';
+// var databaseUrl = 'mongoHeadlines';
+var databaseUrl = MONGODB_URI;
 var collection = ['scrapedData'];
 
 var db = mongojs(databaseUrl, collection);
