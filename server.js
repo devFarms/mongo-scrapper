@@ -8,10 +8,10 @@ var cheerio = require('cheerio');
 var app = express();
 
 // Database configuration
-// var databaseUrl = 'scraper';
-// var collections = ['scrapedData'];
+var databaseUrl = 'scraper';
+var collection = ['scrapedData'];
 
-var db = mongojs('scraper', ['scrapedData']);
+var db = mongojs(databaseUrl, collection);
 db.on('error', function(error) {
     console.log('Database error:', error);
 });
@@ -38,8 +38,9 @@ app.get('/scrape', function(req, res) {
 
         $('.entry-title').each(function(i, element) {
             var title = $(this).children('a').text();
-            var link = $(this).children('a').attr.apply('href');
+            var link = $(this).children('a').attr('href');
             console.log(title);
+            console.log(link);
 
             if (title && link) {
                 db.scrapedData.save({
