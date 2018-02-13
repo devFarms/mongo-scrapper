@@ -1,6 +1,7 @@
 // Dependencies
 var express = require('express');
 var mongojs = require('mongojs');
+var mongoose = require('mongoose');
 var request = require('request');
 var cheerio = require('cheerio');
 
@@ -8,7 +9,7 @@ var cheerio = require('cheerio');
 var app = express();
 
 // Database configuration
-var databaseUrl = 'scraper';
+var databaseUrl = 'mongoHeadlines';
 var collection = ['scrapedData'];
 
 var db = mongojs(databaseUrl, collection);
@@ -70,4 +71,13 @@ app.set("port", (process.env.PORT || 3000));
 
 app.listen(app.get("port"), function(){
     console.log("Server started on port " +app.get("port"))
+});
+
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI, {
+  useMongoClient: true
 });
