@@ -8,7 +8,7 @@
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="./assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         
     </head>
     <body>
@@ -43,11 +43,10 @@
                 <h1>Heading One</h1>
                 <p style="font-size: 200%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
-            
         </div>
 
-        <div class="container">
-            <div class="row">
+        <div class="container" id="data-here">
+            <!-- <div class="row">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                     <div class="card-content grey-text">
@@ -74,7 +73,7 @@
                     </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <footer class="page-footer blue-grey darken-1">
                 <div class="container">
@@ -106,22 +105,6 @@
         
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
-
-        <script>
-            (function ($) {
-                $(function () {
-
-                    //initialize all modals           
-                    $('.modal').modal();
-
-                    //now you can open modal from code
-                    //$('#modal1').modal('open');
-
-                    //or by click on trigger
-                    $('.trigger-modal').modal();
-
-                }); // end of document ready
-            })(jQuery); // end of jQuery name space
-        </script>
+        <script src="./assets/js/scraper.js"></script>
     </body>
 </html>
